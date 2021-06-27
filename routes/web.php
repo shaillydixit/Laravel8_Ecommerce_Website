@@ -25,6 +25,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin:admin']], function ()
 Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
     return view('admin.index');
 })->name('dashboard');
+//destroy method is readymade for logout
+Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
 
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
