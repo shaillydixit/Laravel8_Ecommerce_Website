@@ -30,9 +30,9 @@
                                         <td>{{$item->brand_name_en}}</td>
                                         <td>{{$item->brand_name_hin}}</td>
                                         <td><img src="{{asset($item->brand_image)}}" style="width:70px; height:40px;"></td>
-                                        <td>
-                                            <a href="{{route('brand.edit', $item->id)}}" class="btn btn-info">Edit</a>
-                                            <a href="{{route('brand.delete', $item->id)}}" class="btn btn-danger" id="delete">Delete</a>
+                                        <td class="text-center">
+                                            <a href="{{route('brand.edit', $item->id)}}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i></a>
+                                            <a href="{{route('brand.delete', $item->id)}}" class="btn btn-danger" title="Delete Data" id="delete"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
