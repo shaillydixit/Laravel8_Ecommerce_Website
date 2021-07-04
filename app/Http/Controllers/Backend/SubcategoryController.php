@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Subcategory;
 use App\Models\Category;
+use App\Models\SubSubCategory;
 
 class SubcategoryController extends Controller
 {
@@ -76,5 +77,22 @@ class SubcategoryController extends Controller
         );
 
         return redirect()->route('all.subcategory')->with($notification);
+    }
+
+
+    /////sub sub category/////
+
+    public function SubSubCategoryView()
+    {
+        $categories = Category::orderBy('category_name_en', 'ASC')->get();
+        $subsubcategory = SubSubCategory::latest()->get();
+
+        return view('backend.category.sub_subcategory_view', compact('subsubcategory', 'categories'));
+    }
+
+    public function GetSubCategory($category_id)
+    {
+        $subcat = Subcategory::where('category_id', $category_id)->orderBy('subcategory_name_en', 'ASC')->get();
+        return json_encode($subcat);
     }
 }
