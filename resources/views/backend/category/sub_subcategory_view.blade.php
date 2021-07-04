@@ -60,7 +60,7 @@
                     <div class="box-body">
                         <div class="table-responsive">
 
-                            <form method="post" action="{{route('subcategory.store')}}">
+                            <form method="post" action="{{route('subsubcategory.store')}}">
                                 @csrf
 
                                 <div class="form-group">
