@@ -111,4 +111,11 @@ Route::prefix('category')->group(function () {
     Route::get('/subcategory/ajax/{category_id}', [SubcategoryController::class, 'GetSubCategory']);
 
     Route::post('/sub/sub/store', [SubcategoryController::class, 'SubSubCategoryStore'])->name('subsubcategory.store');
+
+    Route::get('/sub/sub/edit/{id}', [SubcategoryController::class, 'SubSubCategoryEdit'])->name('subsubcategory.edit');
+
+    Route::post('/sub/sub/update', [SubcategoryController::class, 'SubSubCategoryUpdate'])->name('subsubcategory.update');
+
+    Route::get('/sub/sub/delete/{id}', [SubcategoryController::class, 'SubSubcategoryDelete'])->name('subsubcategory.delete');
+
 });
