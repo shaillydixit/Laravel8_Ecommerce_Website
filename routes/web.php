@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubcategoryController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -117,5 +118,10 @@ Route::prefix('category')->group(function () {
     Route::post('/sub/sub/update', [SubcategoryController::class, 'SubSubCategoryUpdate'])->name('subsubcategory.update');
 
     Route::get('/sub/sub/delete/{id}', [SubcategoryController::class, 'SubSubcategoryDelete'])->name('subsubcategory.delete');
+});
 
+//product
+Route::prefix('product')->group(function () {
+
+    Route::get('/add', [ProductController::class, 'AddProduct'])->name('add.product');
 });
