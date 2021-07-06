@@ -132,7 +132,7 @@
                         var d = $('select[name="subcategory_id"]').empty();
                         $.each(data, function(key, value) {
                             $('select[name ="subcategory_id"]').append('<option value ="' + value.id + ' ">' +
-                                value.subcategory_name_en + ' < /option>')
+                                value.subcategory_name_en + '</option>')
                         });
                     }
                 });
