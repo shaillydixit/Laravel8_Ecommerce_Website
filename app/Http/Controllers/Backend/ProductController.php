@@ -64,7 +64,7 @@ class ProductController extends Controller
         // for multiple image upload insert
 
         $images = $request->file('multi_img');
-        foreach ($image as $img) {
+        foreach ($images as $img) {
             $make_name = hexdec(uniqid()) . '.' . $img->getClientOriginalExtension();
             Image::make($img)->resize(917, 1000)->save('upload/products/multi-image/' . $make_name);
             $uploadPath = 'upload/products/multi-image/' . $make_name;
@@ -74,13 +74,12 @@ class ProductController extends Controller
                 'photo_name' => $uploadPath,
                 'created_at' => Carbon::now(),
             ]);
-
-            $notification = array(
-                'message' => 'Product Inserted Successfully!',
-                'alert-type' => 'success',
-            );
-
-            return redirect()->back() - with($notification);
         }
+        $notification = array(
+            'message' => 'Product Inserted Successfully!',
+            'alert-type' => 'success',
+        );
+
+        return redirect()->back()->with($notification);
     }
 }
