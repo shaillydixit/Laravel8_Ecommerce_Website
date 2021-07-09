@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubcategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -146,4 +147,24 @@ Route::prefix('product')->group(function () {
     Route::get('/inactive/{id}', [ProductController::class, 'ProductInactive'])->name('product.inactive');
 
     Route::get('/active/{id}', [ProductController::class, 'ProductActive'])->name('product.active');
+});
+
+
+//slider all routes
+
+Route::prefix('slider')->group(function () {
+
+    Route::get('/view', [SliderController::class, 'SliderView'])->name('manage.slider');
+
+    Route::post('/store', [SliderController::class, 'SliderStore'])->name('slider.store');
+
+    // Route::get('/edit/{id}', [SliderController::class, 'BrandEdit'])->name('brand.edit');
+
+    // Route::post('/update', [SliderController::class, 'BrandUpdate'])->name('brand.update');
+
+    // Route::get('/delete/{id}', [SliderController::class, 'BrandDelete'])->name('brand.delete');
+
+    Route::get('/inactive/{id}', [SliderController::class, 'SliderInactive'])->name('slider.inactive');
+
+    Route::get('/active/{id}', [SliderController::class, 'SliderActive'])->name('slider.active');
 });
