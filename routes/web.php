@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\SubcategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\LanguageController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 /*
@@ -171,3 +172,10 @@ Route::post('/user/profile/store', [IndexController::class, 'UserProfileStore'])
 Route::get('/user/change/password', [IndexController::class, 'UserChangePassword'])->name('change.password');
 
 Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
+
+
+///frontend///
+
+Route::get('/language/english', [LanguageController::class, 'English'])->name('english.language');
+
+Route::get('/language/hindi', [LanguageController::class, 'Hindi'])->name('hindi.language');
