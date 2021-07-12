@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Category;
+use App\Models\Slider;
 
 class IndexController extends Controller
 {
     public function Index()
     {
-        return view('frontend.index');
+        $categories = Category::orderBy('category_name_en', 'ASC')->get();
+        $sliders = Slider::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
+        return view('frontend.index', compact('categories', 'sliders'));
     }
 
     public function UserLogout()
