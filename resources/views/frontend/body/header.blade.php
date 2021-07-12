@@ -172,7 +172,7 @@
                                             <div class="yamm-content ">
                                                 <div class="row">
                                                     @php
-                                                    $subcategories = App\Models\Subcategory::where('category_id', '$category->id')->orderBy('subcategory_name_en', 'ASC')->get();
+                                                    $subcategories = App\Models\Subcategory::where('category_id', $category->id)->orderBy('subcategory_name_en', 'ASC')->get();
                                                     @endphp
 
 
@@ -181,7 +181,7 @@
                                                         <h2 class="title">{{$subcategory->subcategory_name_en}}</h2>
 
                                                         @php
-                                                        $subsubcategories = App\Models\SubSubCategory::where('subcategory_id', '$subcategory->id')->orderBy('subsubcategory_name_en', 'ASC')->get();
+                                                        $subsubcategories = App\Models\SubSubCategory::where('subcategory_id', $subcategory->id)->orderBy('subsubcategory_name_en', 'ASC')->get();
                                                         @endphp
 
 
