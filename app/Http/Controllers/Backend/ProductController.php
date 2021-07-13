@@ -145,7 +145,7 @@ class ProductController extends Controller
             'alert-type' => 'info',
 
         );
-        return redirect()->route('all.subsubcategory')->with($notification);
+        return redirect()->route('manage.product')->with($notification);
     }
 
 
