@@ -179,3 +179,7 @@ Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdat
 Route::get('/language/english', [LanguageController::class, 'English'])->name('english.language');
 
 Route::get('/language/hindi', [LanguageController::class, 'Hindi'])->name('hindi.language');
+
+
+
+Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDetails']);
