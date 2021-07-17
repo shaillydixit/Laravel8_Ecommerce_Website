@@ -106,19 +106,19 @@ Shailly Ecommerce
                         <div class="item">
                             <div class="products">
                                 <div class="hot-deal-wrapper">
-                                    <div class="image"> <img src="{{asset($product->product_thumbnail)}}" alt=""> </div>
-
-                                    @php
-                                    $amount = $product->selling_price - $product->discount_price;
-                                    $discount = ($amount/$product->selling_price) * 100;
-                                    @endphp
-                                    <div>
-
-                                        @if($product->discount_price == NULL)
-                                        <div class="sale-offer-tag"><span>new</span></div>
-                                        @else
-                                        <div class="sale-offer-tag"><span>{{round($discount)}}%<br>off</span></div>
-                                        @endif
+                                    <div class="product-image">
+                                        <div class="image"> <img src="{{asset($product->product_thumbnail)}}" alt=""> </div>
+                                        @php
+                                        $amount = $product->selling_price - $product->discount_price;
+                                        $discount = ($amount/$product->selling_price) * 100;
+                                        @endphp
+                                        <div>
+                                            @if($product->discount_price == NULL)
+                                            <div class="sale-offer-tag"><span>new</span></div>
+                                            @else
+                                            <div class="sale-offer-tag"><span>{{round($discount)}}%<br>off</span></div>
+                                            @endif
+                                        </div>
                                     </div>
                                     <div class="timing-wrapper">
                                         <div class="box-wrapper">
