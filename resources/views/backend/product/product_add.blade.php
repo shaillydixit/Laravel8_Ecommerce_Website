@@ -142,7 +142,7 @@
                                             <div class="form-group">
                                                 <h5>Product Tags English <span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <input type="text" value="Lorem,Ipsum,Amet" data-role="tagsinput" name="product_tags_en" class="form-control">
+                                                    <input type="text" value="" data-role="tagsinput" name="product_tags_en" class="form-control">
                                                     @error('product_tags_en')
                                                     <span class="text-danger">{{$message}}</span>
                                                     @enderror
@@ -156,7 +156,7 @@
                                             <div class="form-group">
                                                 <h5>Product Tags Hindi <span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <input type="text" value="Lorem,Ipsum,Amet" data-role="tagsinput" name="product_tags_hin" class="form-control">
+                                                    <input type="text" value="" data-role="tagsinput" name="product_tags_hin" class="form-control">
                                                     @error('product_tags_hin')
                                                     <span class="text-danger">{{$message}}</span>
                                                     @enderror

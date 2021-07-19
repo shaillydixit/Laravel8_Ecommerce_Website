@@ -183,3 +183,8 @@ Route::get('/language/hindi', [LanguageController::class, 'Hindi'])->name('hindi
 
 
 Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDetails']);
+
+
+//product tag
+
+Route::get('/product/tag/{tag}', [IndexController::class, 'TagWiseProduct']);
