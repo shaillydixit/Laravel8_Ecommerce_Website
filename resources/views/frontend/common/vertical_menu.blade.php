@@ -24,6 +24,7 @@ $categories = App\Models\Category::orderBy('category_name_en','ASC')->get();
 
                             @foreach($subcategories as $subcategory)
                             <div class="col-sm-12 col-md-3">
+                                <a href="{{url('subcategory/product/' .$subcategory->id. '/' .$subcategory->subcategory_slug )}}"></a>
                                 <h2 class="title">
                                     @if(session()->get('language') == 'hindi') {{ $subcategory->subcategory_name_hin }} @else {{ $subcategory->subcategory_name_en }} @endif
                                 </h2>
